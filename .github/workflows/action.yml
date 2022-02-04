@@ -7,16 +7,18 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-        PAT: ${{ secrets.ADO_PAT }}
+ 
     steps:
-      - uses: actions/checkout@v2
+      - name: checkout
+        uses: actions/checkout@v2
+      - name: run migration script
+        run: ./migrate-repositories-to-github.sh
+        
       ##- run: |
         ##  ./list-ADOonprem-repositories.sh
 
           
-      - name: running migrate script
-        run: ./migrate-repositories-to-github.sh
+
        # run:  bash list-ADOonprem-repositories.sh > ado_repositories.csv
              ## bash migrate_repo.sh ado_repositories.csv
         
