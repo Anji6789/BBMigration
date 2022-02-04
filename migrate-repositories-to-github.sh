@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/ksh
 if [[ ! -f $1 ]]; then echo "$1 file not found"; exit 99; fi
 :"
 read -p 'GitHub Username (not email): ' GH_USERNAME
