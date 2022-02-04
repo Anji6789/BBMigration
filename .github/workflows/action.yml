@@ -1,0 +1,43 @@
+#running shell script with github workflow
+name: Check for push
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    env:
+        PAT: ${{ secrets.ADO_PAT }}
+    steps:
+      - uses: actions/checkout@v2
+      ##- run: |
+        ##  ./list-ADOonprem-repositories.sh
+      - run: |
+         #!/bin/bash
+          ##read -p 'Bitbucket Username (not email): ' BB_USERNAME
+          ##read -sp 'Bitbucket Password: ' BB_PASSWORD
+         # #https://dev.azure.com/{organization}/_apis/git/repositories?api-version=6.0
+         next_url="https://dev.azure.com/ChirumamillaA/_apis/git/repositories?api-version=6.0"
+         while [ ! -z "$next_url" ]; do
+          ##   response_json=$( curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url" )
+          ##  echo "$response_json" | jq -r '.values | map([.slug, .workspace.slug, .description, .is_private] | @csv) | join("\n")'
+          ## next_url=$( echo "$response_json" | jq -r '.next' )
+          ##done
+         test=$(curl -s --user $ADO_USERNAME:$ADO_PAT "$next_url")
+         echo "$test" | jq -r '.values | map([.slug, .workspace.slug, .description, .is_private] | @csv) | join("\n")'
+         next_url=$( echo "$test" | jq -r '.next' )
+         done
+          
+      ##- name: script
+       ## run:  bash list-ADOonprem-repositories.sh > ado_repositories.csv
+             ## bash migrate_repo.sh ado_repositories.csv
+        
+      ##- name: printing the list
+      ##  run: |
+        ##  echo Here is the list
+        ##  ls -a
+         ## pwd
+        
+        
+        ##shell: bash
