@@ -1,10 +1,11 @@
 #!/bin/bash
 if [[ ! -f $1 ]]; then echo "$1 file not found"; exit 99; fi
 :"
-#read -p 'GitHub Username (not email): ' GH_USERNAME
-#read -sp 'GitHub Password: ' GH_PASSWORD
-#read -p 'BitBucket Username (not email): ' ADO_USERNAME
-#read -sp 'BitBucket Password: ' ADO_PASSWORD
+read -p 'GitHub Username (not email): ' GH_USERNAME
+read -sp 'GitHub Password: ' GH_PAT
+read -p 'ADO Username (not email): ' ADO_USERNAME
+read -sp 'ADO Password: ' ADO_PAT
+
 (cat "$1" ; echo) | tail -n +2 | tr -d '\r' | while IFS=, read -r ado_repo ado_org gh_repo gh_org description archive private
 do
   if [ -z "$ado_repo" ]; then continue; fi # skip empty lines
@@ -13,7 +14,8 @@ do
   #next_url="https://api.bitbucket.org/2.0/repositories?role=member"
   #test=$(curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url")
   #echo "$test"
-  git clone --mirror https://${{ secrets.ADO_USERNAME }}:${ secrets.ADO_PASSWORD }}@ssh.dev.azure.com:v3/$ado_org/$ado_repo.git
+  #git clone --mirror https://${{ secrets.ADO_USERNAME }}:${ secrets.ADO_PASSWORD }}@ssh.dev.azure.com:v3/$ado_org/$ado_repo.git
+  git clone --mirror https://azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q@dev.azure.com/ChirumamillaA/Migration/_git/repo1
   cd $ado_repo.git
   echo
 
