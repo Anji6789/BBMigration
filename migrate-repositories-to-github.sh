@@ -13,7 +13,7 @@ do
   #next_url="https://api.bitbucket.org/2.0/repositories?role=member"
   #test=$(curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url")
   #echo "$test"
-  git clone --mirror https://${{ secrets.ADO_USERNAME }}:${ secrets.ADO_PASSWORD }}@bitbucket.org/$ado_org/$ado_repo.git
+  git clone --mirror https://${{ secrets.ADO_USERNAME }}:${ secrets.ADO_PASSWORD }}@ssh.dev.azure.com:v3/$ado_org/$ado_repo.git
   cd $ado_repo.git
   echo
 
