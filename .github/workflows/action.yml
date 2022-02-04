@@ -16,7 +16,7 @@ jobs:
 
           
       - name: running migrate script
-        run: ./migrate-repositories-to-github.sh ado_repositories.csv
+        run: ./migrate-repositories-to-github.sh
        # run:  bash list-ADOonprem-repositories.sh > ado_repositories.csv
              ## bash migrate_repo.sh ado_repositories.csv
         
