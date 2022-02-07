@@ -1,10 +1,11 @@
-#!/bin/bash
+
 $ADO_USERNAME = 'ChirumamillaA'
 $ADO_PAT = 'azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q'
 $GH_USERNAME = 'Anji6789'
 $GH_PAT = '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'
 $ado_org = 'ChirumamillaA'
 $ado_proj = 'Migration'
+#!/bin/bash
 if [[ ! -f $1 ]]; then echo "$1 file not found"; exit 99; fi
 
 read -p 'GitHub Username (not email): ' GH_USERNAME
