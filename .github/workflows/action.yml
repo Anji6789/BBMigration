@@ -18,20 +18,3 @@ jobs:
         #run: ./migrate_repo.sh ado_repositories.csv
         run: |
           bash migrate_repo.sh ado_repositories.csv
-        
-      ##- run: |
-        ##  ./list-ADOonprem-repositories.sh
-
-          
-
-       # run:  bash list-ADOonprem-repositories.sh > ado_repositories.csv
-             ## bash migrate_repo.sh ado_repositories.csv
-        
-      ##- name: printing the list
-      ##  run: |
-        ##  echo Here is the list
-        ##  ls -a
-         ## pwd
-        
-        
-        ##shell: bash
