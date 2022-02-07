@@ -1,4 +1,4 @@
-#running shell script with github workflow
+#running bash script with github workflow
 name: Check for push
 on:
   push:
