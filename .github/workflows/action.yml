@@ -12,7 +12,8 @@ jobs:
       - name: checkout
         uses: actions/checkout@v2
       - name: run migration script
-        run: bash /migrate-repositories-to-github.sh
+        #run: bash /migrate-repositories-to-github.sh
+        run: bash migrate-repositories-to-github.sh ado_repositories.csv
         
       ##- run: |
         ##  ./list-ADOonprem-repositories.sh
