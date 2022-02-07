@@ -15,7 +15,7 @@ do
   #next_url="https://api.bitbucket.org/2.0/repositories?role=member"
   #test=$(curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url")
   #echo "$test"
-  git clone --mirror https://ChirumamillaA:azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q@dev.azure.com/$ado_org/Infy/_git/$ado_repo.git
+  git clone --mirror https://ChirumamillaA:azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q@dev.azure.com/$ado_org/Migration/_git/$ado_repo.git
   cd $ado_repo.git
   echo
 
