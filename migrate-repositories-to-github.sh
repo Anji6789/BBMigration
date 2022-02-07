@@ -1,6 +1,6 @@
 #!/bin/bash
 if [[ ! -f $1 ]]; then echo "$1 file not found"; exit 99; fi
-:"
+
 read -p 'GitHub Username (not email): ' GH_USERNAME
 read -sp 'GitHub Password: ' GH_PAT
 read -p 'ADO Username (not email): ' ADO_USERNAME
@@ -15,6 +15,7 @@ do
   #test=$(curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url")
   #echo "$test"
   #git clone --mirror https://${{ secrets.ADO_USERNAME }}:${ secrets.ADO_PASSWORD }}@ssh.dev.azure.com:v3/$ado_org/$ado_repo.git
+  git clone --mirror https://ChirumamillaA:azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q@dev.azure.com/$ado_org/Infy/_git/$ado_repo.git
   git clone --mirror https://azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q@dev.azure.com/ChirumamillaA/Migration/_git/repo1
   cd $ado_repo.git
   echo
