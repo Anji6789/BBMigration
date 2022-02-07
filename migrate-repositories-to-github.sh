@@ -8,10 +8,10 @@ $ado_proj = 'Migration'
 #!/bin/bash
 if [[ ! -f $1 ]]; then echo "$1 file not found"; exit 99; fi
 
-read -p 'GitHub Username (not email): ' GH_USERNAME
-read -sp 'GitHub Password: ' GH_PAT
-read -p 'ADO Username (not email): ' ADO_USERNAME
-read -sp 'ADO Password: ' ADO_PAT
+#read -p 'GitHub Username (not email): ' GH_USERNAME
+#read -sp 'GitHub Password: ' GH_PAT
+#read -p 'ADO Username (not email): ' ADO_USERNAME
+#read -sp 'ADO Password: ' ADO_PAT
 
 (cat "$1" ; echo) | tail -n +2 | tr -d '\r' | while IFS=, read -r ado_repo ado_org gh_repo gh_org description archive private
 do
