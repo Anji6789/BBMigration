@@ -31,6 +31,8 @@ do
     echo "PUBLIC!"
     PRIVATE_FLAG="false"
   fi
+  #curl -u your_git_name:your_personal_access_token https://api.github.com/user
+  curl -u Anji6789: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 https://api.github.com/user
   curl -u Anji6789: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 https://api.github.com/orgs/$gh_org/repos -d "{\"name\": \"$gh_repo\", \"private\": $PRIVATE_FLAG, \"description\": \"$description\"}"
   echo
 
