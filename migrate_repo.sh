@@ -5,6 +5,8 @@
 # $ado_org = 'ChirumamillaA'
 # $ado_proj = 'Migration'
 ##!/bin/bash
+$ADO_PAT = 'azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q'
+$AzureDevOpsAuthenicationHeader = @{Authorization = 'Basic ' + [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$($ADO_PAT)")) }
 if [[ ! -f $1 ]]; then echo "$1 file not found"; exit 99; fi
 
 #read -p 'GitHub Username (not email): ' GH_USERNAME
