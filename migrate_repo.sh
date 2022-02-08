@@ -4,7 +4,7 @@ $GH_USERNAME = 'Anji6789'
 $GH_PAT = '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'
 $ado_org = 'ChirumamillaA'
 $ado_proj = 'Migration'
-#!/bin/bash
+##!/bin/bash
 if [[ ! -f $1 ]]; then echo "$1 file not found"; exit 99; fi
 
 #read -p 'GitHub Username (not email): ' GH_USERNAME
