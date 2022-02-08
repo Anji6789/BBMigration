@@ -1,9 +1,9 @@
-$ADO_USERNAME = 'ChirumamillaA'
-$ADO_PAT = 'azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q'
-$GH_USERNAME = 'Anji6789'
-$GH_PAT = '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'
-$ado_org = 'ChirumamillaA'
-$ado_proj = 'Migration'
+# $ADO_USERNAME = 'ChirumamillaA'
+# $ADO_PAT = 'azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q'
+# $GH_USERNAME = 'Anji6789'
+# $GH_PAT = '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'
+# $ado_org = 'ChirumamillaA'
+# $ado_proj = 'Migration'
 ##!/bin/bash
 if [[ ! -f $1 ]]; then echo "$1 file not found"; exit 99; fi
 
@@ -21,8 +21,9 @@ do
   #next_url="https://api.bitbucket.org/2.0/repositories?role=member"
   #test=$(curl -s --user $ADO_USERNAME:$ADO_PASSWORD "$next_url")
   #echo "$test"
-  git clone --mirror https://ChirumamillaA:azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q@dev.azure.com/$ado_org/Migration/_git/$ado_repo
-  cd $ado_repo.git
+  #git clone --mirror https://ChirumamillaA:azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q@dev.azure.com/$ado_org/Migration/_git/$ado_repo
+  git clone --mirror https://ChirumamillaA:azgwpurjskt7xsbmqqex2ngz2axb5w6xjt5x74ashywqs7kpux3q@dev.azure.com/ChirumamillaA/Migration/_git/repo1
+  #cd $ado_repo.git
   echo
 
   echo "=== $ado_repo cloned, now creating $gh_org/$gh_repo on GitHub with description [$description]..."
